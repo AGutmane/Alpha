@@ -4,6 +4,7 @@ import java.util.Map;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -67,5 +68,10 @@ public class GoogleSteps extends GeneralSteps {
     @Then("^error message: (.+)$")
     public void error_message(String errorMessage) {
         assertThat(loginPage.getErrorMessage()).contains(errorMessage);
+    }
+
+    @And("^do something new$")
+    public void doSomethingNew() {
+        new LoginPage()
     }
 }
