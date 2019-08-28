@@ -70,8 +70,8 @@ public class GoogleSteps extends GeneralSteps {
         assertThat(loginPage.getErrorMessage()).contains(errorMessage);
     }
 
-    @And("^do something new$")
-    public void doSomethingNew() {
-        new LoginPage()
-    }
+//    @And("^do something new$")
+//    public void doSomethingNew() {
+//        LoginPage loginPage = new LoginPage();
+//    }
 }
