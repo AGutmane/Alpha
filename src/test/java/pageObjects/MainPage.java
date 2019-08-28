@@ -9,11 +9,11 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MainPage extends Page {
 
-    @FindBy(how = How.ID, using = "hplogo")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"hplogo\"]")
     public WebElement logo;
-    @FindBy(how = How.CSS, using = ".a4bIc > input")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"tsf\"]/div[2]/div/div[1]/div/div[1]/input")
     public WebElement searchField;
-    @FindBy(how = How.ID, using = "gb_70")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"gb_70\"]")
     public WebElement loginButton;
 
     public MainPage(WebDriverLib driver) {
