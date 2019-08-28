@@ -1,7 +1,5 @@
 package stepDefinitions;
 
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -12,32 +10,48 @@ public class DemoShop24Steps extends GeneralSteps {
     private DemoShop24Page demoShop24Page = new DemoShop24Page(driver);
 
     public static String getDemoShop() {
-        return "http://www.demoshop24.com/";
-    }
-    
-    @Before
-    public void openBrowser() {
-        driver.openBrowser();
+        return "http://www.demoshop24.com";
     }
 
-    @After
-    public void closeBrowser() {
-        driver.close();
-    }
-    
+ //  @Before
+   // public void openBrowser() {
+     //  driver.openBrowser();
+//   }
+
+  //  @After
+   // public void closeBrowser() {
+     //   driver.close();
+   // }
+
     @Given("^application is launched using PO$")
-    public void abc() {
-        getDemoShop();
+    public void applicationLaunch() throws Throwable {
+        driver.get(getDemoShop());
+
     }
 
 
     @Then("^i see wishlist icon using PO$")
     public void iSeeWishlistIconUsingPO() {
-        demoShop24Page.assertWishlistVisibility ();
+        demoShop24Page.assertWishlistVisibility();
     }
 
 
     @When("^i navigate to page Laptops and Notebooks using PO$")
     public void iNavigateToPageLaptopsAndNotebooksUsingPO() {
+        demoShop24Page.clickonLaptopsAndNotebooks();
     }
+
+
+    @When("^i navigate to page Components using PO$")
+    public void iNavigateToPageComponentsUsingPO() {
+        demoShop24Page.clickonComponents();
+    }
+
+
+    @When("^i navigate to page Tablets using PO$")
+    public void iNavigateToPageTabletsUsingPO() {
+        demoShop24Page.clickonTablets();
+    }
+
+
 }
