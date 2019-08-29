@@ -3,7 +3,7 @@ Feature: Each product has own product page
   I want to be able to open each product own page
 
   Background:
-    Given I am on demoshop24 homepage
+    Given I am on demoshop homepage
 
   Scenario: Click on the any product from Desktop category redirect to the product own page
     When I click on the Desktops category in the web page navigation bar using PO
