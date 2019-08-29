@@ -14,7 +14,7 @@ public class DemoShopSteps extends GeneralSteps {
         return "http://www.demoshop24.com/";
     }
 
-    @Given("^I am on demoshop24 homepage$")
+    @Given("^I am on demoshop homepage$")
     public void iAmOnDemoShopPage() throws Throwable {
         driver.get(getDemoShopPageUrl());
     }

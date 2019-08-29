@@ -21,7 +21,7 @@ public class ShopStepdefs extends GeneralSteps {
     }
 
     @Given("^I am on demoshop24 homepage$")
-    public void iAmOnDemoshopPage() throws Throwable {
+    public void iAmOnDemoshopPage1() throws Throwable {
         driver.get(getShopPagePOUrl());
     }
 
