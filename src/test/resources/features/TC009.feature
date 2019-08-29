@@ -64,3 +64,4 @@ Feature: Demoshop24 wishist add and remove functionality
       |iPhone|
       |HTC Touch HD|
     And Wishlist icon has number of 0 assigned to it
+

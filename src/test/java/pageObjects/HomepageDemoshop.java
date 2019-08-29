@@ -53,6 +53,9 @@ public class HomepageDemoshop extends Page {
     @FindBy(how = How.XPATH, using = "//table//td[contains(@class, 'text-left')]/a")
     private List<WebElement> resultThing;
 
+    @FindBy(how = How.XPATH, using = "//table//td[contains(@class, 'text-left')]/a")
+    private List<WebElement> shoppingThing;
+
     @FindBy(how = How.ID, using = "wishlist-total")
     public WebElement wishlistspan;
 
@@ -77,9 +80,32 @@ public class HomepageDemoshop extends Page {
     @FindBy(how = How.XPATH, using = "/html/body/div[@id='account-wishlist']/div[@class='row']/div[@id='content']/div[@class='table-responsive']/table[@class='table table-bordered table-hover']/tbody/tr[4]/td[@class='text-right'][3]/a[@class='btn btn-danger']")
     public WebElement removeforthwishlistitem;
 
+    @FindBy(how = How.XPATH, using = "/html/body/div[@id='account-wishlist']/div[@class='row']/div[@id='content']/div[@class='table-responsive']/table[@class='table table-bordered table-hover']/tbody/tr[1]/td[@class='text-right'][3]/button[@class='btn btn-primary']")
+    public WebElement addshoppingcart1;
+
+    @FindBy(how = How.XPATH, using = "/html/body/div[@id='account-wishlist']/div[@class='row']/div[@id='content']/div[@class='table-responsive']/table[@class='table table-bordered table-hover']/tbody/tr[2]/td[@class='text-right'][3]/button[@class='btn btn-primary']")
+    public WebElement addshoppingcart2;
+
+    @FindBy(how = How.XPATH, using = "/html/body/div[@id='account-wishlist']/div[@class='row']/div[@id='content']/div[@class='table-responsive']/table[@class='table table-bordered table-hover']/tbody/tr[3]/td[@class='text-right'][3]/button[@class='btn btn-primary']")
+    public WebElement addshoppingcart3;
+
+    @FindBy(how = How.XPATH, using = "/html/body/div[@id='account-wishlist']/div[@class='row']/div[@id='content']/div[@class='table-responsive']/table[@class='table table-bordered table-hover']/tbody/tr[4]/td[@class='text-right'][3]/button[@class='btn btn-primary']")
+    public WebElement addshoppingcart4;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"cart\"]/button")
+    public WebElement addshoppingcartbutton;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"cart\"]/ul/li[2]/div/p/a[1]")
+    public WebElement viewshoppingcartbutton;
+
+
     public List<WebElement> getResultThing() {
         return resultThing;
     }
+    public List<WebElement> getShoppingThing() {
+        return shoppingThing;
+    }
+
 
 
     public HomepageDemoshop(WebDriverLib driver) {
@@ -173,4 +199,30 @@ public class HomepageDemoshop extends Page {
         removefirstwishlistitem.click();
 
     }
+
+    public void clickaddshoppingcart() {
+        driver.waitForElementPresent(addshoppingcart1);
+        addshoppingcart1.click();
+    }
+
+    public void clickaddshoppingcartall() {
+        driver.waitForElementPresent(addshoppingcart1);
+        addshoppingcart1.click();
+        driver.waitForElementPresent(addshoppingcart2);
+        addshoppingcart2.click();
+        driver.waitForElementPresent(addshoppingcart3);
+        addshoppingcart3.click();
+        driver.waitForElementPresent(addshoppingcart4);
+        addshoppingcart4.click();
+    }
+    public void clickaddshoppingcartbutton() throws InterruptedException {
+        Thread.sleep(1000);
+        driver.waitForElementPresent(addshoppingcartbutton);
+        addshoppingcartbutton.click();
+        Thread.sleep(1000);
+        driver.waitForElementPresent(viewshoppingcartbutton);
+        viewshoppingcartbutton.click();
+
+    }
+
 }

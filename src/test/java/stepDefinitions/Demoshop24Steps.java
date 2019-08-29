@@ -166,4 +166,41 @@ public class Demoshop24Steps extends GeneralSteps {
         assertEquals("Wish List (0)", homepageDemoshop.getwishlistspan());
     }
 
+    @And("^User adds first item to shopping cart$")
+    public void selectshoppingcart() throws InterruptedException {
+        homepageDemoshop.clickaddshoppingcart();
+
+    }
+
+    @And("^User navigates to shopping cart page$")
+    public void Gotoshoppingcartpage() throws InterruptedException {
+        homepageDemoshop.clickaddshoppingcartbutton();
+
+    }
+
+    @Then("^User sees transfered element:$")
+    public void userSeesShoppingCartElement(List<String> text) throws InterruptedException {
+        Thread.sleep(1000);
+        List<WebElement> element = homepageDemoshop.getShoppingThing();
+        boolean innerLoop = false;
+        boolean outerLoop = true;
+        for (String string : text) {
+            innerLoop = false;
+            for (WebElement e : element) {
+                if (e.getText().contains(string)) {
+                    innerLoop = true;
+                }
+            }
+            if (!innerLoop) {
+                outerLoop = false;
+            }
+        }
+        assertTrue(outerLoop);
+    }
+
+    @And("^User adds all items to shopping cart$")
+    public void selectshoppingcartall() throws InterruptedException {
+        homepageDemoshop.clickaddshoppingcartall();
+
+    }
 }
