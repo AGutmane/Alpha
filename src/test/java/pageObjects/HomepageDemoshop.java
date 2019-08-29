@@ -1,7 +1,6 @@
 package pageObjects;
 
 import flowWorkers.WebDriverLib;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -54,11 +53,23 @@ public class HomepageDemoshop extends Page {
     @FindBy(how = How.XPATH, using = "//table//td[contains(@class, 'text-left')]/a")
     private List<WebElement> resultThing;
 
+    @FindBy(how = How.ID, using = "wishlist-total")
+    public WebElement wishlistspan;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"menu\"]/div[2]/ul/li[6]/a")
+    public WebElement phonepda;
+
+    @FindBy(how = How.XPATH, using = "/html/body/div[@id='product-category']/div[@class='row']/div[@id='content']/div[@class='row'][2]/div[@class='product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12'][1]/div[@class='product-thumb']/div[2]/div[@class='button-group']/button[2]")
+    public WebElement touchdwish;
+
+    @FindBy(how = How.XPATH, using = "/html/body/div[@id='product-category']/div[@class='row']/div[@id='content']/div[@class='row'][2]/div[@class='product-layout product-grid col-lg-4 col-md-4 col-sm-6 col-xs-12'][1]/div[@class='product-thumb']/div[2]/div[@class='button-group']/button[2]")
+    public WebElement iphonewish;
+
+
+
     public List<WebElement> getResultThing() {
         return resultThing;
     }
-
-
 
 
     public HomepageDemoshop(WebDriverLib driver) {
@@ -93,7 +104,7 @@ public class HomepageDemoshop extends Page {
     }
 
 
-      public void clickloginpage() {
+    public void clickloginpage() {
         driver.waitForElementPresent(logindropdown);
         logindropdown.click();
         driver.waitForElementPresent(login);
@@ -113,4 +124,35 @@ public class HomepageDemoshop extends Page {
         driver.waitForElementPresent(demoshoplogo);
         demoshoplogo.click();
     }
+
+    public String getwishlistspan() {
+        driver.waitForElementPresent(wishlistspan);
+        return wishlistspan.getText();
+    }
+
+    public void clickphonepda() {
+        driver.waitForElementPresent(phonepda);
+        phonepda.click();
+
+    }
+
+    public void clickTouchdwish() {
+        driver.waitForElementPresent(touchdwish);
+        touchdwish.click();
+
+    }
+    public void clickiphonewish() {
+        driver.waitForElementPresent(iphonewish);
+        iphonewish.click();
+
+    }
+
+    public void clickfeaturedIphoneWish() {
+        driver.waitForElementPresent(wishiphone);
+        wishiphone.click();
+    }
+
+
+
+
 }

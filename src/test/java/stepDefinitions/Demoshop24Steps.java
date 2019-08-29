@@ -16,6 +16,7 @@ import pageObjects.MainPage;
 import pageObjects.ResultPage;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class Demoshop24Steps extends GeneralSteps {
@@ -49,7 +50,7 @@ public class Demoshop24Steps extends GeneralSteps {
         homepageDemoshop.clickHomepagelogo();;
     }
 
-    @When("^User adds 2 items from featured wishlist$")
+    @When("^User adds 2 items Macbook, Iphone from featured wishlist$")
     public void selectwishlistitems() {
         homepageDemoshop.clickMacbookWish();
     }
@@ -59,7 +60,7 @@ public class Demoshop24Steps extends GeneralSteps {
         driver.get(getHomepageDemoshopURL2());
     }
 
-    @Then("^Adds 2 items from MP3players page$")
+    @Then("^Adds 2 items iPod Classic,iPod Nano from MP3players page$")
     public void mp3playerpageadd2items() {
         homepageDemoshop.clickMP3playerpageadd2items();
 
@@ -71,16 +72,29 @@ public class Demoshop24Steps extends GeneralSteps {
 
     }
 
-    @And("^User sees selected element:$")
+    @Then("^User sees selected element:$")
     public void userSeesSelectedElement(List<String> text) {
         List<WebElement> element = homepageDemoshop.getResultThing();
+        boolean innerLoop = false;
+        boolean outerLoop = true;
         for (String string : text) {
+            innerLoop = false;
             for (WebElement e : element) {
-                System.out.println(e.getText().contains(string));
+                if(e.getText().contains(string)) {
+                    innerLoop = true;
+                }
+            }
+            if (!innerLoop) {
+                outerLoop = false;
             }
         }
+        assertTrue(outerLoop);
     }
-
+    @Then("^Wishlist icon has number of 4 assigned to it$")
+    public void wishlistnumber() {
+        System.out.println(homepageDemoshop.getwishlistspan());
+        assertEquals("Wish List (4)",homepageDemoshop.getwishlistspan());
+    }
 }
 
 
