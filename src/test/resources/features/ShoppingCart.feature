@@ -26,7 +26,7 @@ Feature: Check that it's possible to add product to the cart
     And Customer clicks on Show All Components and Notebooks link in the dropdown menu using PO
     Then Customer clicks on the Monitors subcategory using PO
     And Customer choose Apple Cinema product using PO
-    Then Customer fills and necessary additional options
+    Then Customer fills and necessary additional options using PO
     And Customer clicks on ADD TO CART button for Apple Cinema in the product own page using PO
     Then Customer clicks on the Shopping Cart button in the web page header using PO
     Then Apple Cinema is successfully added to Shopping Cart from own page using PO

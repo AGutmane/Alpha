@@ -94,7 +94,7 @@ public class DemoShopCartSteps extends GeneralSteps {
         demoShopCartPage.clickAppleCinema();
     }
 
-    @Then("^Customer fills and necessary additional options$")
+    @Then("^Customer fills and necessary additional options using PO$")
     public void customerFillsAndNecessaryAdditionalOptions() {
         demoShopCartPage.chooseRadioButton();
         demoShopCartPage.chooseAllCheckBoxes();
