@@ -9,6 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 import static junit.framework.TestCase.assertTrue;
 
 public class DemoShop24Page extends Page {
+    @FindBy(how = How.XPATH, using = "//*[@id=\"logo\"]/h1/a")
+    public WebElement TestingDemoShop;
     @FindBy(how = How.XPATH, using = "/html/body/nav[@id='top']/div[@class='container']/div[@id='top-links']/ul[@class='list-inline']/li[3]/a[@id='wishlist-total']/span[@class='hidden-xs hidden-sm hidden-md']")
     public WebElement wishlist;
     @FindBy(how = How.XPATH, using = "//*[@id=\"content\"]/div[2]/div[1]/div/div[3]/button[2]")
@@ -31,17 +33,29 @@ public class DemoShop24Page extends Page {
     public WebElement Tablets;
     @FindBy(how = How.XPATH, using = "//*[@id=\"content\"]/div[2]/div[1]/div/div[2]/h4/a")
     public WebElement MacBook;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"content\"]/div/div[2]/div[1]/button[1]")
+    public WebElement MacBookHeart2;
     @FindBy(how = How.XPATH, using = "//*[@id=\"content\"]/div[2]/div[2]/div/div[2]/h4/a")
     public WebElement iPhone;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"content\"]/div[1]/div[2]/div[1]/button[1]")
+    public WebElement iPhoneHeart2;
     @FindBy(how = How.XPATH, using = "//*[@id=\"content\"]/div[2]/div[3]/div/div[2]/h4/a")
     public WebElement AppleCinema30;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"content\"]/div[1]/div[2]/div[1]/button[1]")
+    public WebElement AppleCinema30Heart2;
     @FindBy(how = How.XPATH, using = "//*[@id=\"content\"]/div[2]/div[4]/div/div[2]/h4/a")
     public WebElement CanonEOS5D;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"content\"]/div/div[2]/div[1]/button[1]")
+    public WebElement CanonEOS5DHeart2;
 
 
     public DemoShop24Page(WebDriverLib driver) {
         super(driver);
         PageFactory.initElements(driver, this);
+    }
+
+    public void clickOnTestingDemoShop() {
+        TestingDemoShop.click();
     }
 
     public void search() {
@@ -55,7 +69,7 @@ public class DemoShop24Page extends Page {
 
     public void searchMacBookHeart() {
         driver.waitForElementPresent(MacBookHeart);
-            }
+    }
 
     public void assertMacBookHeartVisibility() {
         searchMacBookHeart();
@@ -104,24 +118,44 @@ public class DemoShop24Page extends Page {
         Tablets.click();
     }
 
-    public void assertHeartIconVisibility() {
-
-    }
-
     public void clickonMacBook() {
+        driver.waitForElementPresent(MacBook);
         MacBook.click();
     }
 
+    public void assertMacBookHeart2Visibility() {
+        driver.waitForElementPresent(MacBookHeart2);
+        assertTrue(MacBookHeart2.isDisplayed());
+    }
+
     public void clickoniPhone() {
+        driver.waitForElementPresent(iPhone);
         iPhone.click();
     }
 
+    public void assertiPhoneHeart2Visibility() {
+        driver.waitForElementPresent(iPhoneHeart2);
+        assertTrue(iPhoneHeart2.isDisplayed());
+    }
+
     public void clickonAppleCinema30() {
+        driver.waitForElementPresent(AppleCinema30);
         AppleCinema30.click();
     }
 
+    public void assertiAppleCinema30Heart2Visibility() {
+        driver.waitForElementPresent(AppleCinema30Heart2);
+        assertTrue(AppleCinema30Heart2.isDisplayed());
+    }
+
     public void clickonCanonEOS5D() {
+        driver.waitForElementPresent(CanonEOS5D);
         CanonEOS5D.click();
+    }
+
+    public void assertiCanonEOS5DHeart2Visibility() {
+        driver.waitForElementPresent(CanonEOS5DHeart2);
+        assertTrue(CanonEOS5DHeart2.isDisplayed());
     }
 
 

@@ -61,4 +61,6 @@ public class DemoShop24Steps extends GeneralSteps {
         demoShop24Page.assertAppleCinema30HeartVisibility();
         demoShop24Page.assertCanonEOS5DHeartVisibility();
     }
+
+
 }
