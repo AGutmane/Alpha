@@ -38,7 +38,7 @@ public class DemoShop24Steps extends GeneralSteps {
 
     @When("^i navigate to page Laptops and Notebooks using PO$")
     public void iNavigateToPageLaptopsAndNotebooksUsingPO() {
-        demoShop24Page.clickonLaptopsAndNotebooks();
+        demoShop24Page.clickonAllLaptopsAndNotebooks();
     }
 
 
@@ -54,4 +54,11 @@ public class DemoShop24Steps extends GeneralSteps {
     }
 
 
+    @Then("^i se heart icon next to each item MacBook, iPhone, Apple Cinema30, CanonEOS5D using PO$")
+    public void iSeeHeartIconsAtMainPage() {
+        demoShop24Page.assertMacBookHeartVisibility();
+        demoShop24Page.assertiPhoneHeartVisibility();
+        demoShop24Page.assertAppleCinema30HeartVisibility();
+        demoShop24Page.assertCanonEOS5DHeartVisibility();
+    }
 }
