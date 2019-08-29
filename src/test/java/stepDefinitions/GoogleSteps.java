@@ -1,7 +1,5 @@
 package stepDefinitions;
 
-import java.util.Map;
-
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -10,6 +8,8 @@ import cucumber.api.java.en.When;
 import pageObjects.LoginPage;
 import pageObjects.MainPage;
 import pageObjects.ResultPage;
+
+import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
