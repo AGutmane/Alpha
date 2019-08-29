@@ -25,6 +25,10 @@ public class DemoShopCartSteps extends GeneralSteps {
         driver.get(getDemoShopPageUrl());
     }
 
+/*
+    Scenario 1
+*/
+
     @When("^Customer clicks on the Laptops and Notebooks category in the web page navigation bar using PO$")
     public void customerClickOnTheLaptopsAndNotebooksCategoryInTheWebPageNavigationBarUsingPO() {
         demoShopPage.clickOnLaptopsNav();
@@ -45,18 +49,15 @@ public class DemoShopCartSteps extends GeneralSteps {
         demoShopCartPage.clickOnCart();
     }
 
-/*
-    @And("^Customer clicks on the View Cart link in dropdown menu using PO$")
-    public void customerClicksOnTheViewCartLinkInDropdownMenu() {
-        demoShopCartPage.clickViewCartLink();
-    }
-*/
-
     @Then("^Selected product is successfully added to Shopping Cart with correct items quantity using PO$")
     public void selectedProductIsSuccessfullyAddedToShoppingCartWithCorrectItemsQuantity() {
         demoShopCartPage.checkProductInCart();
         //demoShopCartPage.checkItemsQuantity();
     }
+
+/*
+    Scenario 2
+*/
 
     @When("^Customer clicks on the Components category in the web page navigation bar using PO$")
     public void customerClicksOnTheComponentsCategoryInTheWebPageNavigationBarUsingPO() {
@@ -79,12 +80,37 @@ public class DemoShopCartSteps extends GeneralSteps {
     }
 
     @Then("^Customer clicks on ADD TO CART button for Samsung SyncMaster BW in the product own page using PO$")
-    public void customerClicksOnADDTOCARTButtonForSamsungSyncMasterBWInTheProductOwnPageUsingPO() {
+    public void customerClicksOnADDTOCARTButtonForSamsungSyncMasterBWInTheProductOwnPageUsingPO() throws InterruptedException {
         demoShopCartPage.addToCartFromOwnPage();
     }
 
     @Then("^Selected product is successfully added to Shopping Cart from own page using PO$")
     public void selectedProductIsSuccessfullyAddedToShoppingCartFromOwnPageUsingPO() {
         demoShopCartPage.syncMasterAddedToCart();
+    }
+
+    @And("^Customer choose Apple Cinema product using PO$")
+    public void customerChooseAppleCinemaProductUsingPO() {
+        demoShopCartPage.clickAppleCinema();
+    }
+
+    @Then("^Customer fills and necessary additional options$")
+    public void customerFillsAndNecessaryAdditionalOptions() {
+        demoShopCartPage.chooseRadioButton();
+        demoShopCartPage.chooseAllCheckBoxes();
+        demoShopCartPage.enterTextToInput();
+        demoShopCartPage.selectItem();
+        demoShopCartPage.fillTextArea();
+        demoShopCartPage.chooseFile();
+    }
+
+    @And("^Customer clicks on ADD TO CART button for Apple Cinema in the product own page using PO$")
+    public void customerClicksOnADDTOCARTButtonForAppleCinemaInTheProductOwnPageUsingPO() throws InterruptedException {
+        demoShopCartPage.addToCartFromOwnPage();
+    }
+
+    @Then("^Apple Cinema is successfully added to Shopping Cart from own page using PO$")
+    public void appleCinemaIsSuccessfullyAddedToShoppingCartFromOwnPageUsingPO() {
+        demoShopCartPage.AppleCinemaAddedToCart();
     }
 }
