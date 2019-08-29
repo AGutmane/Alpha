@@ -7,7 +7,7 @@ Feature: Review for products
 
   Scenario: Successful review
 
-    Given I am on Demoshop homepages
+    Given I am on Demoshop homepage
     When I click Featured product MacBook using PO
     And click write a review using PO
     And I see MacBook review page using PO

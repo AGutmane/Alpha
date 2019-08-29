@@ -24,8 +24,8 @@ public class MyStepdefs005 extends GeneralSteps {
 
     public static String getProductPage() { return "http://www.demoshop24.com/index.php?route=product/product&product_id=43"; }
 
-    @Given("^I am on Demoshop homepages$")
-    public void iAmOnDemoshopHomepageTest() {
+    @Given("^I am on Demoshop homepage$")
+    public void iAmOnDemoshopHomepage() {
         driver.get(getDemoShopHomePage());
     }
 
