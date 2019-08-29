@@ -64,9 +64,34 @@ public class ShopPagePO extends Page {
     @FindBy(how = How.XPATH, using = "//*[@id=\"content\"]/div/div[1]/ul[1]/li[1]/a/img")
     public WebElement productImage;
 
-    // Find ADD TO CART BUTTON button on product page (for EACH PRODUCT!)
+    // Find ADD TO CART BUTTON on product page (for EACH PRODUCT!)
     @FindBy(how = How.ID, using = "button-cart")
     public WebElement addToCartButton;
+
+    // Find ADD TO WISHLIST BUTTON on product page (for EACH PRODUCT!)
+    @FindBy(how = How.XPATH, using = "//*[@id=\"content\"]/div[1]/div[2]/div[1]/button[1]")
+    public WebElement addToWishlistButton;
+
+    // Find COMPARE THIS PRODUCT BUTTON on product page (for EACH PRODUCT!)
+    @FindBy(how = How.XPATH, using = "//*[@id=\"content\"]/div[1]/div[2]/div[1]/button[2]")
+    public WebElement compareThisProductButton;
+
+    // Find SUCCESS MESSAGE on product page
+    @FindBy(how = How.XPATH, using = "//*[@id=\"product-product\"]/div[1]")
+    public WebElement successComparisonMessage;
+
+    // Find Product Comparison link
+    @FindBy(how = How.XPATH, using = "//*[@id=\"product-product\"]/div[1]/a[2]")
+    public WebElement productComparisonLink;
+
+    // Find Apple Cinema product in comparison table
+    @FindBy(how = How.XPATH, using = "//*[@id=\"content\"]/table/tbody[1]/tr[1]/td[2]/a/strong")
+    public WebElement comparedAppleCinema;
+
+    // Find HP product in comparison table
+    @FindBy(how = How.XPATH, using = "//*[@id=\"content\"]/table/tbody[1]/tr[1]/td[3]/a/strong")
+    public WebElement comparedHpProduct;
+
 
 
     public ShopPagePO(WebDriverLib driver) {
@@ -102,6 +127,16 @@ public class ShopPagePO extends Page {
     // Clicking on "HP LP3065" laptop in product list page
     public void clickOnHpLaptop() {
         hewlettPackardLaptop.click();
+    }
+
+    // Clicking on Compare this Product button
+    public void clickOnCompareButton() {
+        compareThisProductButton.click();
+    }
+
+    // Clicking on Product Comparison link
+    public void clickOnProductComparisonLink() {
+        productComparisonLink.click();
     }
 
 }

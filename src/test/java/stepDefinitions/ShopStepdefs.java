@@ -16,6 +16,7 @@ public class ShopStepdefs extends GeneralSteps {
     private ShopPagePO shopPagePO = new ShopPagePO(driver);
 
     public static String getShopPagePOUrl() {
+
         return "http://www.demoshop24.com/";
     }
 
@@ -23,6 +24,8 @@ public class ShopStepdefs extends GeneralSteps {
     public void iAmOnDemoshopPage() throws Throwable {
         driver.get(getShopPagePOUrl());
     }
+
+    // Scenario: Checking that product page contains all information (with one price)
 
     @When("^I navigate to Desktops category on menu using PO$")
     public void iNavigateToDesktopsCategoryOnMenuUsingPO() {
@@ -74,7 +77,7 @@ public class ShopStepdefs extends GeneralSteps {
         assertTrue(shopPagePO.productImage.isDisplayed());
     }
 
-    // Scenario 2
+    // Scenario: Checking that another product page contains all information (with price after sale)
 
     @When("^I navigate to Laptops category on menu using PO$")
     public void iNavigateToLaptopsCategoryOnMenuUsingPO() {
@@ -101,4 +104,20 @@ public class ShopStepdefs extends GeneralSteps {
         assertTrue(shopPagePO.hpPrice.isDisplayed());
     }
 
+    // Scenario: Checking that product page contains all buttons
+
+    @Then("^Add to cart button is displayed using PO$")
+    public void addToCartButtonIsDisplayedUsingPO() {
+        assertTrue(shopPagePO.addToCartButton.isDisplayed());
+    }
+
+    @And("^Add to Wish list button is displayed using PO$")
+    public void addToWishlistButtonIsDisplayedUsingPO() {
+        assertTrue(shopPagePO.addToWishlistButton.isDisplayed());
+    }
+
+    @And("^Compare button is displayed using PO$")
+    public void compareButtonIsDisplayedUsingPO() {
+        assertTrue(shopPagePO.compareThisProductButton.isDisplayed());
+    }
 }
