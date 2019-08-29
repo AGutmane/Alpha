@@ -45,12 +45,19 @@ public class DemoShopCartPage extends Page {
     public WebElement appleCinemaLink;
 
     //
+/*
     @FindBy(how = How.CLASS_NAME, using = "radio")
     public List<WebElement> radioButtons;
-
+*/
+    @FindBy(how = How.XPATH, using = "//div[@id='input-option218']//div[1]//label[1]")
+    public WebElement radioButtons;
     //
+/*
     @FindBy(how = How.CLASS_NAME, using = "checkbox")
     public List<WebElement> checkBoxes;
+*/
+    @FindBy(how = How.XPATH, using = "//div[@id='input-option223']//div[1]//label[1]")
+    public WebElement checkBoxes;
 
     //
     @FindBy(how = How.ID, using = "input-option208")
@@ -117,13 +124,17 @@ public class DemoShopCartPage extends Page {
     }
 
     public void chooseRadioButton() {
-        radioButtons.get(1).click();
+        //radioButtons.get(1).click();
+        radioButtons.click();
     }
 
     public void chooseAllCheckBoxes() {
+/*
         for (int i = 0; i < checkBoxes.size(); i++) {
             checkBoxes.get(i).click();
         }
+*/
+        checkBoxes.click();
     }
 
     public void enterTextToInput () {
