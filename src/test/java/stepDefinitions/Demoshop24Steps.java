@@ -20,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class Demoshop24Steps1 extends GeneralSteps {
+public class Demoshop24Steps extends GeneralSteps {
     private HomepageDemoshop homepageDemoshop = new HomepageDemoshop(driver);
 
     public static String getHomepageDemoshopURL() {
