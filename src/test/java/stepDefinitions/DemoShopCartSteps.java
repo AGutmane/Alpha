@@ -40,7 +40,7 @@ public class DemoShopCartSteps extends GeneralSteps {
         demoShopCartPage.addItemToCart();
     }
 
-    @Then("^Customer clicks on the Shopping Cart button in the web page header using PO$")
+    @And("^Customer clicks on the Shopping Cart button in the web page header using PO$")
     public void customerClicksOnTheShoppingCartButtonInTheWebpageTopRightCorner() {
         demoShopCartPage.clickOnCart();
     }
@@ -56,5 +56,35 @@ public class DemoShopCartSteps extends GeneralSteps {
     public void selectedProductIsSuccessfullyAddedToShoppingCartWithCorrectItemsQuantity() {
         demoShopCartPage.checkProductInCart();
         //demoShopCartPage.checkItemsQuantity();
+    }
+
+    @When("^Customer clicks on the Components category in the web page navigation bar using PO$")
+    public void customerClicksOnTheComponentsCategoryInTheWebPageNavigationBarUsingPO() {
+        demoShopPage.clickOnComponentsNav();
+    }
+
+    @And("^Customer clicks on Show All Components and Notebooks link in the dropdown menu using PO$")
+    public void customerClicksOnShowAllComponentsAndNotebooksLinkInTheDropdownMenuUsingPO() {
+        demoShopPage.clickOnShowAllComponents();
+    }
+
+    @Then("^Customer clicks on the Monitors subcategory using PO$")
+    public void customerClicksOnTheMonitorsSubcategory() {
+        demoShopPage.clickOnMonitorsGroup();
+    }
+
+    @And("^Customer choose Samsung SyncMaster BW product using PO$")
+    public void customerChooseSamsungSyncMasterBWProduct() {
+        demoShopCartPage.chooseSyncMaster();
+    }
+
+    @Then("^Customer clicks on ADD TO CART button for Samsung SyncMaster BW in the product own page using PO$")
+    public void customerClicksOnADDTOCARTButtonForSamsungSyncMasterBWInTheProductOwnPageUsingPO() {
+        demoShopCartPage.addToCartFromOwnPage();
+    }
+
+    @Then("^Selected product is successfully added to Shopping Cart from own page using PO$")
+    public void selectedProductIsSuccessfullyAddedToShoppingCartFromOwnPageUsingPO() {
+        demoShopCartPage.syncMasterAddedToCart();
     }
 }
