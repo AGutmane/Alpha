@@ -153,7 +153,7 @@ public class DemoShop24Page extends Page {
         CanonEOS5D.click();
     }
 
-    public void assertiCanonEOS5DHeart2Visibility() {
+    public void assertCanonEOS5DHeart2Visibility() {
         driver.waitForElementPresent(CanonEOS5DHeart2);
         assertTrue(CanonEOS5DHeart2.isDisplayed());
     }
