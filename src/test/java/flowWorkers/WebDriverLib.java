@@ -2,10 +2,7 @@ package flowWorkers;
 
 import core.config.YamlConfig;
 import core.config.YamlFileManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -29,7 +26,7 @@ public class WebDriverLib implements WebDriver {
     public void openBrowser() {
         switch (browser) {
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver");
+                System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver.exe");
                 driver = new ChromeDriver();
                 break;
             case "firefox":
@@ -156,6 +153,11 @@ public class WebDriverLib implements WebDriver {
 
     public TargetLocator switchTo() {
         return driver.switchTo();
+    }
+
+    public void changeElementAttributeValue(String elementId, String attributeName, String attributeValue) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.getElementById('" + elementId + "').setAttribute('"+attributeName + "', '" + attributeValue + "')");
     }
 
 }
