@@ -3,6 +3,7 @@ Feature: Google Feature Example
   @INSERT_TAG_HERE
   Scenario Outline: Search in google
     Given open Google webpage
+    And do something new
     When search "<SearchingText>"
     Then result page was opened
     And first result is: "<SearchingResult>"
